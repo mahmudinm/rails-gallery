@@ -24,4 +24,8 @@ test:
 
 production:
   <<: *default
-  database: db/production.sqlite3
+  database: rails1
+  username: rails1
+  password: rails1
+  host: localhost
+  url: <%= ENV['DATABASE_URL'] =>
