@@ -5,7 +5,7 @@ lock '3.6.1'
 server '104.131.25.79', port: 22, roles: [:web, :app, :db], primary: true
 
 set :repo_url,        'git@gitlab.com:mahmudinm/rails.5.latihan.1.git'
-set :application,     'rails.5.capistrano.1'
+set :application,     'rails.5.latihan.1'
 set :user,            'root'
 set :puma_threads,    [4, 16]
 set :puma_workers,    0
@@ -62,6 +62,8 @@ namespace :puma do
 end
 
 namespace :deploy do
+
+  
   desc "Make sure local git is in sync with remote."
   task :check_revision do
     on roles(:app) do
@@ -72,6 +74,7 @@ namespace :deploy do
       end
     end
   end
+
   
   # desc 'Restart application'
   # task :restart do
@@ -89,8 +92,9 @@ namespace :deploy do
   end
 
 
+
   before :starting,     :check_revision
-  after  :finishing,    :compile_assets
+  # after  :finishing,    :compile_assets
   after  :finishing,    :cleanup
   after  :finishing,    :restart
 end

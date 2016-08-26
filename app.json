@@ -1,0 +1,14 @@
+{
+  "name": "railsdokku",
+  "description": "Rails Dokku",
+  "keywords": [
+    "dokku",
+    "rails",
+    "rubyfleebie.com"
+  ],
+  "scripts": {
+    "dokku": {
+      "postdeploy": "bundle exec rake db:migrate"
+    }
+  }
+}
