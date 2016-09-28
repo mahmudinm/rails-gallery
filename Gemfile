@@ -45,6 +45,7 @@ gem 'chartkick'
 gem 'groupdate'
 gem 'active_median'
 gem 'hightop'
+gem 'figaro'
 
 
 group :development, :test do
